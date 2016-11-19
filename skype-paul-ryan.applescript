@@ -2,11 +2,11 @@
 --   Use Skype to Call Paul Ryan over and over and vote in favor of Obamacare
 --   (the Affordable Care Act).
 --
---                              WARNING: Will cost you money for each call.
+--                   WARNING: Will cost you money for each call.
 --------------------------------------------------------------------------------------------
 use AppleScript version "2.4"
 set script_name to "Call Paul Ryan"
-set num_times_to_call to 100
+set num_times_to_call to 100 -- Bump this up to as much as you're willing to spend.
 
 repeat num_times_to_call times
 	tell application "Skype"
