@@ -3,7 +3,9 @@
 ## Skype Paul Ryan
 
 On or around 2016-11-18 House Speaker Paul Ryan ha[s|d] a phone poll going about the Affordable Care Act.
-This applescript uses Skype to call him over and over to support the ACA.
+This applescript uses Skype to call him over and over to support the ACA. Usage:
+
+```osascript skype-paul-ryan.applescript```
 
 Too bad I couldn't find a way to parallelize many calls...
 
