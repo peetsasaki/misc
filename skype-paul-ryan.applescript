@@ -1,6 +1,8 @@
 --------------------------------------------------------------------------------------------
---   Use Skype to Call Paul Ryan over and over and vote in favor of Obamacare
---   (the Affordable Care Act).
+--  Use Skype to Call Paul Ryan over and over and vote in favor of Obamacare
+--  (the Affordable Care Act).
+--  Usage:
+--     osascript skype-paul-ryan.applescript
 --
 --                   WARNING: Will cost you money for each call.
 --------------------------------------------------------------------------------------------
