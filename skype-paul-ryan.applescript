@@ -9,9 +9,9 @@
 use AppleScript version "2.4"
 set script_name to "Call Paul Ryan"
 set num_times_to_call to 100 -- Bump this up to as much as you're willing to spend.
-set delay_for_recording_1 to 35
-set delay_for_recording_2 to 5
-set delay_for_hangup to 2
+set delay_for_recording_1 to 35 -- The recording takes as much as 35 secs to start.
+set delay_for_recording_2 to 5 -- Wait a few secs for the second recording to play.
+set delay_before_hangup to 2 -- Not sure it's required to wait for them to register your vote, but it can't hurt.
 set aca_survey_key to "2"
 set vote_in_favor to "1"
 
@@ -28,11 +28,11 @@ repeat num_times_to_call times
 			end if
 			delay 1
 		end repeat
-		delay delay_for_recording_1 -- The recording takes some time to start.
+		delay delay_for_recording_1
 		log (send command "SET CALL " & call_id & " DTMF " & aca_survey_key script name script_name)
-		delay delay_for_recording_2 -- Wait a few secs for the next recording to play.
+		delay delay_for_recording_2
 		log (send command "SET CALL " & call_id & " DTMF " & vote_in_favor script name script_name)
-		delay delay_for_hangup -- Not sure it's required to wait for them to register your vote, but it can't hurt.
+		delay delay_before_hangup 
 		log (send command "ALTER CALL " & call_id & " HANGUP" script name script_name)
 		-- Wait for the call to hang up.
 		repeat
