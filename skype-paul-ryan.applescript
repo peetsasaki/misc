@@ -7,6 +7,11 @@
 use AppleScript version "2.4"
 set script_name to "Call Paul Ryan"
 set num_times_to_call to 100 -- Bump this up to as much as you're willing to spend.
+set delay_for_recording_1 to 35
+set delay_for_recording_2 to 5
+set delay_for_hangup to 2
+set aca_survey_key to "2"
+set vote_in_favor to "1"
 
 repeat num_times_to_call times
 	tell application "Skype"
@@ -21,11 +26,11 @@ repeat num_times_to_call times
 			end if
 			delay 1
 		end repeat
-		delay 35 -- The recording can take as long as ~35 secs to start.
-		log (send command "SET CALL " & call_id & " DTMF 2" script name script_name)
-		delay 5 -- Wait a couple secs for the next recording to play.
-		log (send command "SET CALL " & call_id & " DTMF 1" script name script_name)
-		delay 2 -- Not sure it's required to wait for them to register your vote, but it can't hurt.
+		delay delay_for_recording_1 -- The recording can take as long as ~35 secs to start.
+		log (send command "SET CALL " & call_id & " DTMF " & aca_survey_key script name script_name)
+		delay delay_for_recording_2 -- Wait a few secs for the next recording to play.
+		log (send command "SET CALL " & call_id & " DTMF " & vote_in_favor script name script_name)
+		delay delay_for_hangup -- Not sure it's required to wait for them to register your vote, but it can't hurt.
 		log (send command "ALTER CALL " & call_id & " HANGUP" script name script_name)
 		-- Wait for the call to hang up.
 		repeat
